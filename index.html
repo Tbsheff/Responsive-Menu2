@@ -29,9 +29,23 @@
     <meta name="msapplication-config" content="./browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <title>The New Testament</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".menu-icon").addEventListener("click", () => {
+                document.querySelector(".main-menu").classList.toggle("menu-show");
+            });
+        });
+    </script>
 </head>
 
-<body>
+<header>
+    <div class="main-menu">
+        <div class="menu-icon">
+            <svg viewbox="0 0 60 60" width="60px" height="60px">
+                <line x1="5%" y1="50%" x2="95%" y2="50%" />
+                <line x1="5%" y1="50%" x2="95%" y2="50%" />
+            </svg>
+        </div>
     <nav>
         <ul>
             <li>
@@ -42,6 +56,11 @@
             <li><a href="form">Form</a></li>
         </ul>
     </nav>
+    </div>
+</header>
+
+<body>
+    
     <div class="hero">
         <picture>
             <source srcset="images/nativityscene1.jpg" media="(min-width: 901px)">
