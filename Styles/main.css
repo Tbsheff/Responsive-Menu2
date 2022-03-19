@@ -47,12 +47,12 @@ img {
 
 p {
     font-family: 'Commissioner', sans-serif;
-    color: 555;
+    color: #555;
 }
 
 article {
     font-family: 'Commissioner', sans-serif;
-    color: 555;
+    color: #555;
 }
 
 picture {
@@ -408,39 +408,7 @@ ol {
     padding-bottom: 0.5rem;
 }
 
-.panel {
-    max-width: none;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1.5rem;
-    padding: 2rem;
-    justify-content: space-around;
-    align-items: flex-start;
-    height: auto;
-}
 
-.panel .button {
-    align-self: center;
-    margin: 1rem;
-}
-
-.panel .image-wrapper {
-    flex: 1 1 1;
-}
-
-.panel .text-wrapper {
-    flex: 1 1 1;
-
-}
-
-.panel h2 {
-    margin: 0;
-    text-align: center;
-}
-
-.left {
-    order: -1;
-}
 
 
 
@@ -560,6 +528,43 @@ nav a {
     color: var(--burnt-sierra);
 }
 
+.panel {
+    max-width: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: auto;
+    flex-direction: column-reverse;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    gap: 2rem;
+
+}
+
+.panel .button {
+    align-self: center;
+    margin: 1rem;
+}
+
+.panel .image-wrapper {
+    flex: 1 1 0%;
+}
+
+.panel .text-wrapper {
+    flex: 1 1 0%;
+
+}
+
+.panel h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.left {
+    order: 0;
+}
 
 @media (min-width: 600px) {
     .main-menu .menu-icon {
@@ -574,7 +579,7 @@ nav a {
         list-style-type: none;
         justify-content: space-around;
         gap: 0rem;
-        flex: 2 1 0;
+        flex: 2 1 0%;
     }
 
     nav {
@@ -640,23 +645,42 @@ nav a {
         transform: scale(1);
         transform-origin: left;
     }
+
+     .cards {
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 2rem;
+         font-size: 1.5rem;
+         line-height: 1.5rem;
+     }
+
+     .card {
+         flex-direction: row;
+         flex-basis: 40%;
+     }
+
+     .panel {
+         flex-direction: row;
+         gap: 1.5rem;
+         margin: 2rem;
+         padding: 0;
+         overflow: hidden;
+     }
+
+     .panel .left {
+         order: -1;
+     }
+
+     .panel .text-wrapper {
+         flex: 1 1 60%;
+     }
+
+     .panel .image-wrapper {
+         flex: 1 1 40%;
+     }
 }
 
-@media (min-width: 600px) {
-    .cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-    }
-
-    .card {
-        flex-direction: row;
-        flex-basis: 40%;
-    }
-}
 
 @media (min-width: 1000px) {
     .cards {
@@ -667,19 +691,6 @@ nav a {
     }
 }
 
-@media (max-width: 700px) {
-    .panel {
-        flex-direction: column-reverse;
-        margin-top: 2rem;
-        padding: 1rem;
-        padding-bottom: 3rem;
-        gap: 2rem;
-    }
-
-    .left {
-        order: 0;
-    }
-}
 
 @keyframes cube-grid {
 
